@@ -2,7 +2,7 @@ class Api::RecipesController < ApplicationController
 
   def index
     @recipes = Recipe.all
-    render 'one_recipe.json.jbuilder'
+    render 'index.json.jbuilder'
   end
 
   def show
@@ -19,6 +19,8 @@ class Api::RecipesController < ApplicationController
                         directions: params[:directions]
                         )
     @recipe.save
+
+    render 'show.json.jbuilder'
   end
 
   def update
