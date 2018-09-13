@@ -1,4 +1,6 @@
 class Recipe < ApplicationRecord
+  belongs_to :user
+
   def ingredients_list
     ingredients.split(", ")
   end
@@ -24,5 +26,11 @@ class Recipe < ApplicationRecord
     time_message
 
   end
+
+  def chef
+    user.name
+  end
+
+
 
 end
